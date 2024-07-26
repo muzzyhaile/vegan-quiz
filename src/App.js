@@ -31,6 +31,66 @@ const quizData = [
     options: ["Bread", "Pasta", "Rice", "All of these can be non-vegan"],
     correctAnswer: "All of these can be non-vegan",
     explanation: "Bread can contain milk or eggs, pasta might contain eggs, and rice can be processed with animal-derived additives."
+  },
+  {
+    question: "Which country has the highest percentage of vegans?",
+    options: ["United States", "United Kingdom", "Israel", "India"],
+    correctAnswer: "Israel",
+    explanation: "Israel has the highest percentage of vegans globally, with an estimated 5% of the population following a vegan diet."
+  },
+  {
+    question: "What is the main ingredient in traditional Japanese miso?",
+    options: ["Soybeans", "Rice", "Wheat", "Seaweed"],
+    correctAnswer: "Soybeans",
+    explanation: "Traditional miso is made primarily from fermented soybeans, although other ingredients may be added."
+  },
+  {
+    question: "Which of these sweeteners is NOT vegan?",
+    options: ["Agave nectar", "Maple syrup", "Honey", "Stevia"],
+    correctAnswer: "Honey",
+    explanation: "Honey is produced by bees and is therefore not considered vegan. The other options are plant-based sweeteners."
+  },
+  {
+    question: "What is the primary ingredient in seitan?",
+    options: ["Soy", "Wheat gluten", "Pea protein", "Mushrooms"],
+    correctAnswer: "Wheat gluten",
+    explanation: "Seitan is made from wheat gluten, the main protein in wheat, and is known for its meat-like texture."
+  },
+  {
+    question: "Which of these cuisines is traditionally the most vegan-friendly?",
+    options: ["French", "Ethiopian", "American", "Spanish"],
+    correctAnswer: "Ethiopian",
+    explanation: "Ethiopian cuisine includes many vegan dishes, with a variety of lentil, bean, and vegetable options often served with injera bread."
+  },
+  {
+    question: "What percentage of greenhouse gas emissions is attributed to animal agriculture?",
+    options: ["5%", "10%", "15%", "20%"],
+    correctAnswer: "15%",
+    explanation: "Animal agriculture is responsible for about 15% of global greenhouse gas emissions."
+  },
+  {
+    question: "Which of these famous historical figures was vegetarian?",
+    options: ["Leonardo da Vinci", "William Shakespeare", "Christopher Columbus", "Marco Polo"],
+    correctAnswer: "Leonardo da Vinci",
+    explanation: "Leonardo da Vinci was known to be vegetarian and had a deep respect for all forms of life."
+  },
+  {
+    question: "What is the main ingredient in nutritional yeast?",
+    options: ["Deactivated yeast", "Wheat germ", "Soy protein", "Algae"],
+    correctAnswer: "Deactivated yeast",
+    explanation: "Nutritional yeast is made from deactivated yeast and is popular among vegans for its cheesy flavor and nutritional content."
+  },
+  {
+    question: "Which of these organizations certified the first vegan product?",
+    options: ["PETA", "The Vegan Society", "Greenpeace", "WHO"],
+    correctAnswer: "The Vegan Society",
+    explanation: "The Vegan Society created the first vegan certification, the Vegan Trademark, in 1990."
+  },
+  {
+    question: "What is the primary environmental benefit of a vegan diet?",
+    options: ["Reduced water usage", "Lower carbon footprint", "Less deforestation", "All of the above"],
+    correctAnswer: "All of the above",
+    explanation: "A vegan diet contributes to reduced water usage, lower carbon emissions, and less deforestation compared to diets that include animal products."
   }
 ];
 
@@ -80,7 +140,12 @@ function App() {
       <div className="App">
         <h2>Quiz Completed!</h2>
         <p>Your Score: {score}/{quizData.length}</p>
-        <p>{score > quizData.length / 2 ? "Great job!" : "Keep learning about veganism!"}</p>
+        <p>
+          {score > 12 ? "Amazing! You're a vegan expert! 🏆" :
+           score > 9 ? "Great job! You really know your vegan facts! 🌱" :
+           score > 6 ? "Not bad! You're on your way to becoming a vegan pro. 📚" :
+           "Keep learning! The vegan world has so much to offer. 🌍"}
+        </p>
         <button onClick={resetQuiz}>Play Again</button>
       </div>
     );
